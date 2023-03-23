@@ -1,0 +1,24 @@
+apiVersion: core.oam.dev/v1beta1
+kind: Application
+metadata:
+  name: web-service
+spec:
+  components:
+    - name: aws-service
+      type: helm
+      properties:
+        repoType: "helm"
+        url: "https://prefapp.github.io/charts/aws-web-service"
+        chart: "aws-web-service"
+        version: "0.3.2"
+        # values:
+        #   webService:
+        #     image: ubuntu/nginx:latest
+        #   deployment:
+        #     containerPort: 80
+        #   service:
+        #     port: 80
+        #   ingress:
+        #     enabled: "true"
+
+          

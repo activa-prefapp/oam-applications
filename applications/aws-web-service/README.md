@@ -28,7 +28,15 @@ Additionally you can check the status of the application with the [VelaUX](https
 
 Configure the deployment of the component by adding and modifying the variables in the Kubevela .yaml file before launch. 
 
-This way you can add and/or modify the initial helm chart variables.
+For example, to configure the webService.image parameter you must use:
+
+```
+        values:
+          webService:
+            image: ubuntu/nginx:latest
+```
+
+This way you can add and/or modify the initial helm chart variables. 
 
 
 | Name                              | Description                                                                                                                                                                                             | Type    | Default                          |

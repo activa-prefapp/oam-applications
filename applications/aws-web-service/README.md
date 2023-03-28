@@ -2,6 +2,12 @@
 
 Deploying the helm graph [aws-web-service](https://artifacthub.io/packages/helm/aws-web-service/aws-web-service/) with FluxCD on Kubevela. This chart allows you to deploy any webservice on your EKS Cluster to expose it to the internet.
 
+## Infrastructure requirements
+
+- KubeVela
+- FluxCD
+- Helm
+
 ## Deployment
 
 After downloading the repository, go to the application directory and run the command:
@@ -13,16 +19,18 @@ vela up -f aws-web-service.yaml
 You can check status with the command:
 
 ```
-vela status web-service -n default  #specify the namespace where it has been deployed
+vela status aws-web-service -n default  #specify the namespace where it has been deployed
 ```
 
 Additionally you can check the status of the application with the [VelaUX](https://kubevela.io/docs/installation/standalone#3-install-velaux) dashboard if you have previously installed the addon.
 
-## Infrastructure requirements
+## Uninstall
 
-- KubeVela
-- FluxCD
-- Helm
+You can undo the changes and remove the application deployment with the following command:
+
+```
+vela delete aws-web-service -n default
+```
 
 ## Configuration / Values
 

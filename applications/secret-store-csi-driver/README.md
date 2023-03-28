@@ -2,6 +2,12 @@
 
 Deploying the helm graph [secret-store-csi-driver](https://artifacthub.io/packages/helm/secret-store-csi-driver/secrets-store-csi-driver) with FluxCD on Kubevela. This chart installs and configures secrets-store-csi-driver.
 
+## Infrastructure requirements
+
+- KubeVela
+- FluxCD
+- Helm
+
 ## Deployment
 
 After downloading the repository, go to the application directory and run the command:
@@ -13,16 +19,20 @@ vela up -f secrets-store-csi-driver.yaml
 You can check status with the command:
 
 ```
-vela status secrets-store-csi -n default  #specify the namespace where it has been deployed
+vela status secrets-store-csi-driver -n default  #specify the namespace where it has been deployed
 ```
 
 Additionally you can check the status of the application with the [VelaUX](https://kubevela.io/docs/installation/standalone#3-install-velaux) dashboard if you have previously installed the addon.
 
-## Infrastructure requirements
 
-- KubeVela
-- FluxCD
-- Helm
+## Uninstall
+
+You can undo the changes and remove the application deployment with the following command:
+
+```
+vela delete secrets-store-csi-driver -n kube-system
+```
+
 
 ## Configuration / Values
 

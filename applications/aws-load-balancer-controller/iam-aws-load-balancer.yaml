@@ -5,7 +5,7 @@ metadata:
   namespace: kube-system
 spec:
   components:
-    - name: balancer-controller
+    - name: aws-load-balancer-controller
       type: helm
       properties:
         repoType: "helm"

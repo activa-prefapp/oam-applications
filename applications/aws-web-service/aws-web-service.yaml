@@ -20,8 +20,11 @@ spec:
           service:
             port: 80
           ingress:
+            enabled: "false"
             ingressClassName: "alb"
-            enabled: "true"
+            host: ""
             alb:
               enabled: "true"
-          
+              # groupName: "group1"
+              # protocol: "HTTPS"
+              # listenPorts: '[{"HTTP": 80}]'

@@ -17,3 +17,6 @@ spec:
           serviceAccount:
             create: "false"
             name: "aws-load-balancer-controller"
+          # enableCertManager: "true"
+          # serviceMonitor:
+          #   enabled: "true"

@@ -16,4 +16,4 @@ spec:
           clusterName: "activa-prefapp"
           serviceAccount:
             create: "false"
-            name: aws-load-balancer-controller
+            name: "aws-load-balancer-controller"

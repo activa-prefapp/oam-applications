@@ -40,6 +40,12 @@ vela status aws-load-balancer-controller -n kube-system
 
 Additionally you can check the status of the application with the [VelaUX](https://kubevela.io/docs/installation/standalone#3-install-velaux) dashboard if you have previously installed the addon.
 
+You can view the ALB logs with the command:
+
+```
+kubectl logs -f -n kube-system -l app.kubernetes.io/name=aws-load-balancer-controller
+```
+
 ## Uninstall
 
 You can undo the changes and remove the application deployment with the following command:

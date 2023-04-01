@@ -13,4 +13,4 @@ spec:
         chart: "aws-load-balancer-controller"
         version: "1.4.8"
         values:
-          clusterName: "activa-prefapp"
+          clusterName: "cluster-name"

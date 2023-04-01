@@ -8,7 +8,7 @@ AWS Load Balancer controller manages the following AWS resources
 - Application Load Balancers to satisfy Kubernetes ingress objects
 - Network Load Balancers to satisfy Kubernetes service objects of type LoadBalancer with appropriate annotations
 
-You may need to create an IAM OIDC provider and create the necessary policies for a correct deployment of the chart. To set up all the requirements you can visit the chart website [here](https://artifacthub.io/packages/helm/aws/aws-load-balancer-controller#prerequisites)
+You may need to create an IAM OIDC provider and create the necessary policies for a correct deployment of the chart. To set up all the requirements you can visit the chart website [here](https://artifacthub.io/packages/helm/aws/aws-load-balancer-controller#prerequisites). You can also visit the requirements section in the [organisation's documentation](https://github.com/activa-prefapp/documentation/blob/main/README.md).
 
 ## Infrastructure requirements
 
@@ -18,15 +18,16 @@ You may need to create an IAM OIDC provider and create the necessary policies fo
 
 ## Deployment
 
-After downloading the repository, go to the application directory and run the command:
+After downloading the repository go to the application directory and change the value of ``clusterName`` to the name of your cluster in the .yaml files of the deployment.
 
-Install the AWS Load Balancer controller, if using iamserviceaccount
+Then run the command:
+
+For install the AWS Load Balancer controller, if using iamserviceaccount
 
 ```
 vela up -f iam-aws-load-balancer.yaml -n kube-system
 ```
-
-Install the AWS Load Balancer controller, if not using iamserviceaccount
+For install the AWS Load Balancer controller, if not using iamserviceaccount
 
 ```
 vela up -f noiam-aws-load-balancer.yaml -n kube-system

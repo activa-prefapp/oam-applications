@@ -47,6 +47,10 @@ You can view the ALB logs with the command:
 kubectl logs -f -n kube-system -l app.kubernetes.io/name=aws-load-balancer-controller
 ```
 
+## Deploy a sample application
+
+Once everything is deployed correctly, you can follow the [aws documentation](https://docs.aws.amazon.com/eks/latest/userguide/network-load-balancing.html) and deploy the sample application.
+
 ## Uninstall
 
 You can undo the changes and remove the application deployment with the following command:

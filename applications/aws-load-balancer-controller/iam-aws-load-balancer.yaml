@@ -1,0 +1,22 @@
+apiVersion: core.oam.dev/v1beta1
+kind: Application
+metadata:
+  name: aws-load-balancer-controller
+  namespace: kube-system
+spec:
+  components:
+    - name: aws-load-balancer-controller
+      type: helm
+      properties:
+        repoType: "helm"
+        url: "https://aws.github.io/eks-charts"
+        chart: "aws-load-balancer-controller"
+        version: "1.4.8"
+        values:
+          clusterName: "cluster-name"
+          serviceAccount:
+            create: "false"
+            name: "aws-load-balancer-controller"
+          # enableCertManager: "true"
+          # serviceMonitor:
+          #   enabled: "true"

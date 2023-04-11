@@ -1,0 +1,25 @@
+apiVersion: core.oam.dev/v1beta1
+kind: Application
+metadata:
+  name: aws-fluent-bit
+  namespace: amazon-cloudwatch
+spec:
+  components:
+    - name: fluent-bit
+      type: helm
+      properties:
+        repoType: "helm"
+        url: "https://aws.github.io/eks-charts"
+        chart: "aws-for-fluent-bit"
+        version: "0.1.24"
+        values:
+          cloudWatch:
+            region: "eu-west-1"
+          cloudWatchLogs:
+            region: "eu-west-1"
+          # firehose:
+          #   enabled: "false"
+          #   region: "eu-west-1"
+          # kinesis:
+          #   enabled: "false"
+          #   region: "eu-west-1"

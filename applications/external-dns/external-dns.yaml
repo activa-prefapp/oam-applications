@@ -9,10 +9,11 @@ spec:
       type: helm
       properties:
         repoType: "helm"
-        url: "https://charts.bitnami.com"
+        url: "https://charts.bitnami.com/bitnami"
         chart: "external-dns"
         version: "6.17.0"
         values:
           aws: 
             region: "<AWS_REGION>"
-            roleArn: "arn:aws:iam::<ACCOUNT_NUMBER>:policy/route53-policy"
+            # assumeRoleArn: "arn:aws:iam::<ACCOUNT_NUMBER>:role/eks-route53-role"
+            roleArn: "arn:aws:iam::<ACCOUNT_NUMBER>:role/eks-route53-role"

@@ -34,6 +34,12 @@ You can check status with the command:
 vela status external-dns -n kube-system
 ```
 
+You can check the application logs with the command
+
+```
+kubectl logs -f -n kube-system -l app.kubernetes.io/name=external-dns
+```
+
 Additionally you can check the status of the application with the [VelaUX](https://kubevela.io/docs/installation/standalone#3-install-velaux) dashboard if you have previously installed the addon.
 
 

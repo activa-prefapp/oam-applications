@@ -2,7 +2,7 @@ apiVersion: core.oam.dev/v1beta1
 kind: Application
 metadata:
   name: external-dns
-  # namespace: default
+  namespace: kube-system
 spec:
   components:
     - name: external-dns
@@ -17,3 +17,7 @@ spec:
             region: "<AWS_REGION>"
             # assumeRoleArn: "arn:aws:iam::<ACCOUNT_NUMBER>:role/eks-route53-role"
             roleArn: "arn:aws:iam::<ACCOUNT_NUMBER>:role/eks-route53-role"
+            zoneType: "public"
+          txtOwnerId: "external-dns"
+          # domainFilters: ["HOSTED_ZONE_NAME"]
+          zoneIdFilters: ["HOSTED_ZONE_ID"]

@@ -6,7 +6,7 @@ Deploying the helm graph [external-dns](https://artifacthub.io/packages/helm/bit
 
 ExternalDNS is a Kubernetes addon that configures public DNS servers with information about exposed Kubernetes services to make them discoverable.
 
-If you have not configured it before, you will need to generate the necessary roles and policies to delegate sufficient permissions to the application. You can find the basic AWS IAM configuration requirements for this application in the requirements section of the [organisation's documentation](https://github.com/activa-prefapp/documentation/blob/main/README.md).
+If you have not configured it before, you will need to generate the necessary roles and policies to delegate sufficient permissions to the application. You can find the basic AWS IAM configuration requirements for this application in the requirements section of the [organisation documentation](https://github.com/activa-prefapp/documentation/blob/main/README.md) or in the official [external-dns](https://github.com/kubernetes-sigs/external-dns/blob/master/docs/tutorials/aws.md#iam-roles-for-service-accounts) documentation.
 
 Information about the versions can be found on the [helm chart website](https://artifacthub.io/packages/helm/bitnami/external-dns#upgrading).
 
@@ -45,7 +45,7 @@ Additionally you can check the status of the application with the [VelaUX](https
 
 ## Deploy a sample application
 
-Once everything is deployed correctly, you can follow the [aws documentation](https://docs.aws.amazon.com/eks/latest/userguide/network-load-balancing.html) and deploy the sample application.
+Once everything is deployed correctly, you can follow the [external-dns documentation](https://github.com/kubernetes-sigs/external-dns/blob/master/docs/tutorials/aws.md#verify-externaldns-works-service-example) and deploy the sample application.
 
 ## Uninstall
 

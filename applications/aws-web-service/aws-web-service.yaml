@@ -22,9 +22,11 @@ spec:
           ingress:
             enabled: "false"
             ingressClassName: "alb"
-            host: ""
+            host: "test.example.com"
             alb:
               enabled: "true"
               # groupName: "group1"
               # protocol: "HTTPS"
               # listenPorts: '[{"HTTP": 80}]'
+            annotations:
+              alb.ingress.kubernetes.io/certificate-arn: 'arn:aws:acm:eu-west-1:<__ACCOUNT_NUMBER__>:certificate/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'

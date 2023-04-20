@@ -6,11 +6,27 @@ Deploying the helm graph [aws-web-service](https://artifacthub.io/packages/helm/
 
 - KubeVela
 - FluxCD
-- Helm
 
 ## Deployment
 
-After downloading the repository, go to the application directory and run the command:
+Before deploying this oam application, you must have the __aws-load-balancer-controller__ and __external-dns__ services deployed and configured on your eks cluster. You can quickly deploy these services as oam applications by following the documentation in the links below.
+
+- [aws-load-balancer-controller oam-application](https://github.com/activa-prefapp/oam-applications/tree/main/applications/aws-load-balancer-controller#readme)
+- [external-dns oam-application](https://github.com/activa-prefapp/oam-applications/tree/main/applications/external-dns#readme)
+
+All files are ready to deploy in this repository.
+
+You can also deploy the above services in the traditional way by following the official documentation.
+
+- [aws-load-balancer-controller](https://docs.aws.amazon.com/eks/latest/userguide/network-load-balancing.html)
+- [external-dns](https://github.com/kubernetes-sigs/external-dns)
+
+In addition, you will need to have a valid certificate configured for your domain.
+
+After downloading the repository, go to the application directory and modify the necessary values for your deployment like __image__, __host__, __annotations__ (certificate configuration)...  
+More information about the values you can change can be found in the [chart documentation](https://artifacthub.io/packages/helm/aws-web-service/aws-web-service/) and at the end of this README.
+
+You can now deploy your web service by running the command:
 
 ```
 vela up -f aws-web-service.yaml
@@ -23,6 +39,8 @@ vela status aws-web-service -n default  #specify the namespace where it has been
 ```
 
 Additionally you can check the status of the application with the [VelaUX](https://kubevela.io/docs/installation/standalone#3-install-velaux) dashboard if you have previously installed the addon.
+
+After a few minutes your web service will be online on the specified domain.
 
 ## Uninstall
 

@@ -1,0 +1,32 @@
+apiVersion: core.oam.dev/v1beta1
+kind: Application
+metadata:
+  name: aws-web-service
+  # namespace: default
+spec:
+  components:
+    - name: aws-service
+      type: helm
+      properties:
+        repoType: "helm"
+        url: "https://prefapp.github.io/charts/aws-web-service"
+        chart: "aws-web-service"
+        version: "0.3.2"
+        values:
+          webService:
+            image: ubuntu/nginx:latest
+          deployment:
+            containerPort: 80
+          service:
+            port: 80
+          ingress:
+            enabled: "false"
+            ingressClassName: "alb"
+            host: "test.example.com"
+            alb:
+              enabled: "true"
+              # groupName: "group1"
+              # protocol: "HTTPS"
+              # listenPorts: '[{"HTTP": 80}]'
+            annotations:
+              alb.ingress.kubernetes.io/certificate-arn: 'arn:aws:acm:eu-west-1:<__ACCOUNT_NUMBER__>:certificate/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'

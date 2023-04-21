@@ -1,0 +1,23 @@
+apiVersion: core.oam.dev/v1beta1
+kind: Application
+metadata:
+  name: external-dns
+  namespace: kube-system
+spec:
+  components:
+    - name: external-dns
+      type: helm
+      properties:
+        repoType: "helm"
+        url: "https://charts.bitnami.com/bitnami"
+        chart: "external-dns"
+        version: "6.17.0"
+        values:
+          aws: 
+            region: "<AWS_REGION>"
+            # assumeRoleArn: "arn:aws:iam::<ACCOUNT_NUMBER>:role/eks-route53-role"
+            roleArn: "arn:aws:iam::<ACCOUNT_NUMBER>:role/eks-route53-role"
+            zoneType: "public"
+          txtOwnerId: "external-dns"
+          # domainFilters: ["HOSTED_ZONE_NAME"]
+          zoneIdFilters: ["HOSTED_ZONE_ID"]

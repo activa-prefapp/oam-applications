@@ -2,6 +2,7 @@ apiVersion: core.oam.dev/v1beta1
 kind: Application
 metadata:
   name: infra-gitops
+  namespace: gitops
 spec:
   components:
   - name: deploy-sample-gitops
@@ -9,13 +10,13 @@ spec:
     properties:
       repoType: git
       # replace it with your repo url
-      url: https://github.com/activa-prefapp/oam-gitops_sample
+      url: https://github.com/activa-prefapp/oam-gitops-sample
       # replace it with your git secret if it's a private repo
-      # secretRef: git-secret
+      secretRef: git-auth-secret
       # the pull interval time, set to 10m since the infrastructure is steady
-      pullInterval: 30s
+      pullInterval: 1m
       git:
         # the branch name
         branch: sample-test
       # the path to sync
-      path: ./oma-app
+      path: ./infrastructure

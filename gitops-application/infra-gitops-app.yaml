@@ -17,6 +17,6 @@ spec:
       pullInterval: 1m
       git:
         # the branch name
-        branch: sample-test
+        branch: gitops-test
       # the path to sync
       path: ./infrastructure

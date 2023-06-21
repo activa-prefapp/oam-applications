@@ -1,0 +1,22 @@
+apiVersion: core.oam.dev/v1beta1
+kind: Application
+metadata:
+  name: infra-gitops-backstage
+  namespace: gitops
+spec:
+  components:
+  - name: backstage-gitops
+    type: kustomize
+    properties:
+      repoType: git
+      # replace it with your repo url
+      url: https://github.com/activa-prefapp/backstage-kubevela
+      # replace it with your git secret if it's a private repo
+      secretRef: git-auth-secret
+      # the pull interval time, set to 10m since the infrastructure is steady
+      pullInterval: 1m
+      git:
+        # the branch name
+        branch: backstage-demo
+      # the path to sync
+      path: ./infrastructure

@@ -1,7 +1,7 @@
 apiVersion: core.oam.dev/v1beta1
 kind: Application
 metadata:
-  name: infra-gitops
+  name: infra-gitops-app
   namespace: gitops
 spec:
   components:

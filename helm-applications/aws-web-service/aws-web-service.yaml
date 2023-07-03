@@ -29,4 +29,5 @@ spec:
               # protocol: "HTTPS"
               # listenPorts: '[{"HTTP": 80}]'
             annotations:
-              alb.ingress.kubernetes.io/certificate-arn: 'arn:aws:acm:eu-west-1:<__ACCOUNT_NUMBER__>:certificate/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'
+              alb.ingress.kubernetes.io/certificate-id: "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+              # alb.ingress.kubernetes.io/certificate-arn: 'arn:aws:acm:eu-west-1:<__ACCOUNT_NUMBER__>:certificate/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'

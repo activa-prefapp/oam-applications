@@ -57,3 +57,7 @@ You can undo the changes and remove the application deployment with the followin
 ```
 vela delete infra-gitops -n gitops
 ```
+
+## Other examples
+
+Other OAM GitOps applications, which have been used throughout the project, have been added to the other-examples folder.
